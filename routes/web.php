@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\ProfileController;
+// use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,8 +38,9 @@ Route::middleware(['auth','role:admin'])->group(function () {
         Route::get('/create-category', 'CreateCategory')->name('admin.create-category');
         Route::get('/all-category', 'AllCategory')->name('admin.all-category');
         Route::get('/create-subcategory', 'CreateSubCategory')->name('admin.create-subcategory');
+        Route::get('/all-subcategory', 'AllSubCategory')->name('admin.all-subcategory');
         Route::get('/create-brand', 'CreateBrands')->name('admin.create-brands');
-        Route::get('/all-brands', 'AllBrands')->name('admin.all-brands');
+        Route::get('/all-brands', 'AllBrands')->name('admin.all.brands');
     });
     Route::prefix('admin/products')->controller(ProductController::class)->group(function () {
         Route::get('/create-product', 'create')->name('admin.product.create');
