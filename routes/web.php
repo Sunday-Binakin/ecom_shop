@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,5 +29,26 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+//, 'role:admin'
+Route::middleware(['auth','role:admin'])->group(function () {
+    Route::prefix('admin')->controller(DashboardController::class)->group(function () {
+        Route::get('/dashboard2', 'Dashboard')->name('admin.dashboard');
+        Route::get('/messages', 'ContactMessage')->name('admin.messages');
+        Route::get('/create-category', 'CreateCategory')->name('admin.create-category');
+        Route::get('/all-category', 'AllCategory')->name('admin.all-category');
+        Route::get('/create-subcategory', 'CreateSubCategory')->name('admin.create-subcategory');
+        Route::get('/create-brand', 'CreateBrands')->name('admin.create-brands');
+        Route::get('/all-brands', 'AllBrands')->name('admin.all-brands');
+    });
+    Route::prefix('admin/products')->controller(ProductController::class)->group(function () {
+        Route::get('/create-product', 'create')->name('admin.product.create');
+        Route::get('/all-products', 'index')->name('admin.product.index');
+    });
+});
+// Route::middleware('auth','role.admin')->group(function(){
+//     Route::prefix('admin')->Controller()->group(function(){
 
-require __DIR__.'/auth.php';
+//     });
+//});
+
+require __DIR__ . '/auth.php';
