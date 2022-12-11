@@ -32,14 +32,13 @@ class DashboardController extends Controller
     {
         return view('admin.all_subcategory');
     }
-    function CreateBrands()
+    public function CreateBrands()
     {
         return view('admin.create_brands');
     }
-    function AllBrands()
+    public function AllBrands()
     {
         return view('admin.all_brands');
     }
-
 
 }
