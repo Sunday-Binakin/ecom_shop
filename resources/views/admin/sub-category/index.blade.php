@@ -1,4 +1,7 @@
 @extends('admin.layouts.master')
+@section('page-title')
+All Sub category
+@endsection
 @section('page-content')
 <div class="card">
     <div class="card-header">

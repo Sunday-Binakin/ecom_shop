@@ -1,4 +1,7 @@
 @extends('admin.layouts.master')
+@section('page-title')
+    Create Sub Category
+@endsection
 @section('page-content')
 
 <div class="row">
