@@ -26,7 +26,7 @@
                 <div class="form-inline mr-auto">
                     <ul class="navbar-nav mr-3">
                         <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg
-									collapse-btn"> <i data-feather="align-justify"></i></a></li>
+                                      collapse-btn"> <i data-feather="align-justify"></i></a></li>
                         <li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
                                 <i data-feather="maximize"></i>
                             </a></li>
@@ -55,27 +55,27 @@
                             </div>
                             <div class="dropdown-list-content dropdown-list-message">
                                 <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar
-											text-white"> <img alt="image" src="{{ asset('admin/assets/img/users/user-1.png"') }}" class="rounded-circle">
+                                              text-white"> <img alt="image" src="{{ asset('admin/assets/img/users/user-1.png') }}" class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">John
                                             Deo</span>
                                         <span class="time messege-text">Please check your mail !!</span>
                                         <span class="time">2 Min Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image" src="{{ asset('admin/assets/img/users/user-2.png') }}" class="rounded-circle">
+                                        <img alt="image" src="{{asset('admin/assets/img/users/user-2.png')}}" class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
                                             Smith</span> <span class="time messege-text">Request for leave
                                             application</span>
                                         <span class="time">5 Min Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image" src="{{ asset('admin/assets/img/users/user-5.png') }}" class="rounded-circle">
+                                        <img alt="image" src="{{asset('admin/assets/img/users/user-5.png')}}" class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">Jacob
                                             Ryan</span> <span class="time messege-text">Your payment invoice is
                                             generated.</span> <span class="time">12 Min Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image" src="{{ asset('admin/assets/img/users/user-4.png') }}" class="rounded-circle">
+                                        <img alt="image" src="assets/img/users/user-4.png" class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">Lina
                                             Smith</span> <span class="time messege-text">hii John, I have upload
                                             doc
@@ -83,7 +83,7 @@
                                             Min Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image" src="{{ asset('admin/assets/img/users/user-3.png') }}" class="rounded-circle">
+                                        <img alt="image" src="assets/img/users/user-3.png" class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">Jalpa
                                             Joshi</span> <span class="time messege-text">Please do as specify.
                                             Let me
@@ -91,7 +91,7 @@
                                             Days Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
-                                        <img alt="image" src="{{ asset('admin/assets/img/users/user-2.png') }}" class="rounded-circle">
+                                        <img alt="image" src="assets/img/users/user-2.png" class="rounded-circle">
                                     </span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
                                             Smith</span> <span class="time messege-text">Client Requirements</span>
                                         <span class="time">2 Days Ago</span>
@@ -114,19 +114,19 @@
                             </div>
                             <div class="dropdown-list-content dropdown-list-icons">
                                 <a href="#" class="dropdown-item dropdown-item-unread"> <span class="dropdown-item-icon bg-primary text-white"> <i class="fas
-												fa-code"></i>
+                                                  fa-code"></i>
                                     </span> <span class="dropdown-item-desc"> Template update is
                                         available now! <span class="time">2 Min
                                             Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-info text-white"> <i class="far
-												fa-user"></i>
+                                                  fa-user"></i>
                                     </span> <span class="dropdown-item-desc"> <b>You</b> and <b>Dedik
                                             Sugiharto</b> are now friends <span class="time">10 Hours
                                             Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-success text-white"> <i class="fas
-												fa-check"></i>
+                                                  fa-check"></i>
                                     </span> <span class="dropdown-item-desc"> <b>Kusnaedi</b> has
                                         moved task <b>Fix bug header</b> to <b>Done</b> <span class="time">12
                                             Hours
@@ -137,7 +137,7 @@
                                         clean it! <span class="time">17 Hours Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span class="dropdown-item-icon bg-info text-white"> <i class="fas
-												fa-bell"></i>
+                                                  fa-bell"></i>
                                     </span> <span class="dropdown-item-desc"> Welcome to Otika
                                         template! <span class="time">Yesterday</span>
                                     </span>
@@ -148,11 +148,11 @@
                             </div>
                         </div>
                     </li>
-                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="{{ asset('admin/assets/img/user.png') }}" class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
+                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="{{ asset('admin/assets/img/user.png')}}" class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
                         <div class="dropdown-menu dropdown-menu-right pullDown">
                             <div class="dropdown-title">Hello Sarah Smith</div>
                             <a href="profile.html" class="dropdown-item has-icon"> <i class="far
-										fa-user"></i> Profile
+                                          fa-user"></i> Profile
                             </a> <a href="timeline.html" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
                                 Activities
                             </a> <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
@@ -169,7 +169,7 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="index.html"> <img alt="image" src="{{ asset('admin/assets/img/logo.png') }}" class="header-logo" /> <span class="logo-name">Otika</span>
+                        <a href="index.html"> <img alt="image" src="{{ asset('admin/assets/img/logo.png')}}" class="header-logo" /> <span class="logo-name">Otika</span>
                         </a>
                     </div>
                     <ul class="sidebar-menu">
@@ -178,144 +178,52 @@
                             <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="briefcase"></i><span>Widgets</span></a>
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="briefcase"></i><span>Category</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
-                                <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.category.create') }}">Create category</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.category.index') }}">All Category</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Apps</span></a>
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Sub Category</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="chat.html">Chat</a></li>
-                                <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                                <li><a class="nav-link" href="blog.html">Blog</a></li>
-                                <li><a class="nav-link" href="calendar.html">Calendar</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Email</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="email-inbox.html">Inbox</a></li>
-                                <li><a class="nav-link" href="email-compose.html">Compose</a></li>
-                                <li><a class="nav-link" href="email-read.html">read</a></li>
-                            </ul>
-                        </li>
+                                <li><a class="nav-link" href="{{ route('admin.sub.category.create')}}">Create Sub-Category</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.sub.category.index')}}">All Sub-Category</a></li>
 
-                        <!-- Main Content -->
-                        <div class="main-content">
-                            @yield('page-content')
-                            {{-- <div class="settingSidebar">
-          <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-cog"></i>
-          </a>
-          <div class="settingSidebar-body ps-container ps-theme-default">
-            <div class=" fade show active">
-              <div class="setting-panel-header">Setting Panel
-              </div>
-              <div class="p-15 border-bottom">
-                <h6 class="font-medium m-b-10">Select Layout</h6>
-                <div class="selectgroup layout-color w-50">
-                  <label class="selectgroup-item">
-                    <input type="radio" name="value" value="1" class="selectgroup-input-radio select-layout" checked>
-                    <span class="selectgroup-button">Light</span>
-                  </label>
-                  <label class="selectgroup-item">
-                    <input type="radio" name="value" value="2" class="selectgroup-input-radio select-layout">
-                    <span class="selectgroup-button">Dark</span>
-                  </label>
-                </div>
-              </div>
-              <div class="p-15 border-bottom">
-                <h6 class="font-medium m-b-10">Sidebar Color</h6>
-                <div class="selectgroup selectgroup-pills sidebar-color">
-                  <label class="selectgroup-item">
-                    <input type="radio" name="icon-input" value="1" class="selectgroup-input select-sidebar">
-                    <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
-                      data-original-title="Light Sidebar"><i class="fas fa-sun"></i></span>
-                  </label>
-                  <label class="selectgroup-item">
-                    <input type="radio" name="icon-input" value="2" class="selectgroup-input select-sidebar" checked>
-                    <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
-                      data-original-title="Dark Sidebar"><i class="fas fa-moon"></i></span>
-                  </label>
-                </div>
-              </div>
-              <div class="p-15 border-bottom">
-                <h6 class="font-medium m-b-10">Color Theme</h6>
-                <div class="theme-setting-options">
-                  <ul class="choose-theme list-unstyled mb-0">
-                    <li title="white" class="active">
-                      <div class="white"></div>
-                    </li>
-                    <li title="cyan">
-                      <div class="cyan"></div>
-                    </li>
-                    <li title="black">
-                      <div class="black"></div>
-                    </li>
-                    <li title="purple">
-                      <div class="purple"></div>
-                    </li>
-                    <li title="orange">
-                      <div class="orange"></div>
-                    </li>
-                    <li title="green">
-                      <div class="green"></div>
-                    </li>
-                    <li title="red">
-                      <div class="red"></div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="p-15 border-bottom">
-                <div class="theme-setting-options">
-                  <label class="m-b-0">
-                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                      id="mini_sidebar_setting">
-                    <span class="custom-switch-indicator"></span>
-                    <span class="control-label p-l-10">Mini Sidebar</span>
-                  </label>
-                </div>
-              </div>
-              <div class="p-15 border-bottom">
-                <div class="theme-setting-options">
-                  <label class="m-b-0">
-                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                      id="sticky_header_setting">
-                    <span class="custom-switch-indicator"></span>
-                    <span class="control-label p-l-10">Sticky Header</span>
-                  </label>
-                </div>
-              </div>
-              <div class="mt-4 mb-4 p-3 align-center rt-sidebar-last-ele">
-                <a href="#" class="btn btn-icon icon-left btn-primary btn-restore-theme">
-                  <i class="fas fa-undo"></i> Restore Default
-                </a>
-              </div>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Brands</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="{{ route('admin.brands.create')}}">Create Brands</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.brands.index')}}">All Brands</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-header">Product Maintain Section</li>
+                        <li><a class="nav-link" href="{{ route('admin.product.create')}}"><i data-feather="file"></i><span>Add Product</span></a></li>
+                        <li><a class="nav-link" href="{{  route('admin.product.index')}}"><i data-feather="file"></i><span>All Product</span></a></li>
+                        <li class="menu-header">Other Section</li>
+                        <li><a class="nav-link" href="{{ route('admin.messages.index')}}"><i data-feather="file"></i><span>Messages</span></a></li>
+                    </ul>
+                </aside>
             </div>
-          </div>
-        </div> --}}
-                        </div>
-                        <footer class="main-footer">
-                            <div class="footer-left">
-                                <a href="templateshub.net">Templateshub</a></a>
-                            </div>
-                            <div class="footer-right">
-                            </div>
-                        </footer>
+            <!-- Main Content -->
+            <div class="main-content">
+                @yield('page-content')
+
             </div>
+            <footer class="main-footer">
+                <div class="footer-left">
+                    <a href="templateshub.net">Templateshub</a></a>
+                </div>
+                <div class="footer-right">
+                </div>
+            </footer>
         </div>
-        <!-- General JS Scripts -->
-        <script src="{{ asset('admin/assets/js/app.min.js') }}"></script>
-        <!-- JS Libraies -->
-        <script src="{{ asset('admin/assets/bundles/apexcharts/apexcharts.min.js') }}"></script>
-        <!-- Page Specific JS File -->
-        <script src="{{ asset('admin/assets/js/page/index.js') }}"></script>
-        <!-- Template JS File -->
-        <script src="{{ asset('admin/assets/js/scripts.js') }}"></script>
-        <!-- Custom JS File -->
-        <script src="{{ asset('admin/assets/js/custom.js') }}"></script>
+    </div>
+    {{-- scripts --}}
+    @include('admin.layouts.script')
+    {{-- end of script --}}
 </body>
 
 
