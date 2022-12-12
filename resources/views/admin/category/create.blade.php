@@ -1,4 +1,5 @@
 @extends('admin.layouts.master')
 @section('page-content')
-<p>messages</p>
+<h2>create category</h2>
 @endsection
+

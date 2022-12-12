@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class SubCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('admin.products.index');
+        //
+        return view('admin.sub-category.index');
     }
 
     /**
@@ -25,7 +26,7 @@ class ProductController extends Controller
     public function create()
     {
         //
-        return view('admin.products.create');
+        return view('admin.sub-category.create');
     }
 
     /**

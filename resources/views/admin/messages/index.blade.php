@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
 @section('page-content')
-<h2>All cate</h2>
+<h2>messages</h2>
 @endsection
 

@@ -1,10 +1,14 @@
 <?php
 
 // use App\Http\Controllers\Admin\DashboardController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\BrandsController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\MessagesController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,26 +35,31 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 //, 'role:admin'
-Route::middleware(['auth','role:admin'])->group(function () {
+Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::prefix('admin')->controller(DashboardController::class)->group(function () {
         Route::get('/dashboard2', 'Dashboard')->name('admin.dashboard');
         Route::get('/messages', 'ContactMessage')->name('admin.messages');
-        Route::get('/create-category', 'CreateCategory')->name('admin.create-category');
-        Route::get('/all-category', 'AllCategory')->name('admin.all-category');
-        Route::get('/create-subcategory', 'CreateSubCategory')->name('admin.create-subcategory');
-        Route::get('/all-subcategory', 'AllSubCategory')->name('admin.all-subcategory');
-        Route::get('/create-brand', 'CreateBrands')->name('admin.create-brands');
-        Route::get('/all-brands', 'AllBrands')->name('admin.all.brands');
+
+    });
+    Route::prefix('admin/messages')->controller(MessagesController::class)->group(function () {
+        Route::get('/index', 'index')->name('admin.messages.index');
+    });
+    Route::prefix('admin/category')->controller(CategoryController::class)->group(function () {
+        Route::get('/create', 'create')->name('admin.category.create');
+        Route::get('/index', 'index')->name('admin.category.index');
+    });
+    Route::prefix('admin/sub/category')->controller(SubCategoryController::class)->group(function () {
+        Route::get('/create', 'create')->name('admin.sub.category.create');
+        Route::get('/index', 'index')->name('admin.sub.category.index');
+    });
+    Route::prefix('admin/brands')->controller(BrandsController::class)->group(function () {
+        Route::get('/create', 'create')->name('admin.brands.create');
+        Route::get('/index', 'index')->name('admin.brands.index');
     });
     Route::prefix('admin/products')->controller(ProductController::class)->group(function () {
-        Route::get('/create-product', 'create')->name('admin.product.create');
-        Route::get('/all-products', 'index')->name('admin.product.index');
+        Route::get('/create', 'create')->name('admin.product.create');
+        Route::get('/index', 'index')->name('admin.product.index');
     });
 });
-// Route::middleware('auth','role.admin')->group(function(){
-//     Route::prefix('admin')->Controller()->group(function(){
-
-//     });
-//});
 
 require __DIR__ . '/auth.php';

@@ -1,4 +1,5 @@
 @extends('admin.layouts.master')
 @section('page-content')
-<p>create-cat</p>
+<h2>All subcategory</h2>
 @endsection
+
