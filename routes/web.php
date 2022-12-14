@@ -46,6 +46,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     });
     Route::prefix('admin/category')->controller(CategoryController::class)->group(function () {
         Route::get('/create', 'create')->name('admin.category.create');
+        Route::post('/store', 'store')->name('admin.category.store');
         Route::get('/index', 'index')->name('admin.category.index');
     });
     Route::prefix('admin/sub/category')->controller(SubCategoryController::class)->group(function () {

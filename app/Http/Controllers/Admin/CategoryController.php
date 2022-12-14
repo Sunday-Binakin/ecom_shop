@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -35,9 +38,16 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCategoryRequest $request)
     {
         //
+        $request->validated();
+        Category::insert([
+            'category_name' => $request->category_name,
+            'slug'=>strtolower(str_replace('','-',$request->category_name)),
+            'created_at' => Carbon::now(),
+        ]);
+        return redirect()->route('admin.category.index')->with('message', 'Category Added Successfully');
     }
 
     /**
