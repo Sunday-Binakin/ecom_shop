@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('page-title')
-    Create Category
+Create Category
 @endsection
 @section('page-content')
 
@@ -15,7 +15,7 @@
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
-                    <li>{{ $error }}}}</li>
+                    <li>{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
@@ -23,7 +23,7 @@
 
             {{-- end error messages --}}
 
-            <form action="" method="POST">
+            <form method="post" action="{{route('admin.category.store')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">

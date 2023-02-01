@@ -27,4 +27,13 @@ class StoreCategoryRequest extends FormRequest
             'category_name' => 'required|unique:categories',
         ];
     }
+
+    public  function messages()
+    {
+        # code...
+        return [
+            'category_name.required' => 'Category Name is required',
+            'category_name.unique' => 'Category Name is already taken',
+        ];
+    }
 }
