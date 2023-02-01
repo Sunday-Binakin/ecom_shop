@@ -84,9 +84,17 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreCategoryRequest $request, $id)
     {
         //
+        $request->validated();
+        Category::findOrFail($id)->update([
+            'category_name' => $request->category_name,
+            'slug'=>Str::slug($request->category_name),
+            // 'slug'=>strtolower(str_replace('','-',$request->category_name)),
+            'updated_at' => Carbon::now(),
+        ]);
+        return redirect()->route('admin.category.index')->with('message', 'Category Updated Successfully');
     }
 
     /**
@@ -98,5 +106,7 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+        Category::findOrFail($id)->delete();
+        return redirect()->route('admin.category.index')->with('message', 'Category Deleted Successfully');
     }
 }

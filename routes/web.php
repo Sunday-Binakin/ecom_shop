@@ -49,7 +49,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('/store', 'store')->name('admin.category.store');
         Route::get('/index', 'index')->name('admin.category.index');
         Route::get('/edit/{id}', 'edit')->name('admin.category.edit');
-        // Route::post('/update/{id}', 'update')->name('admin.category.update');
+        Route::post('/update/{id}', 'update')->name('admin.category.update');
         Route::get('/delete/{id}', 'destroy')->name('admin.category.delete');
     });
     Route::prefix('admin/sub/category')->controller(SubCategoryController::class)->group(function () {
