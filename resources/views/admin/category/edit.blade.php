@@ -8,7 +8,7 @@ Create Category
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4>Create Category</h4>
+                <h4>Edit Category</h4>
             </div>
             {{-- display error messages --}}
             @if($errors->any())
@@ -23,16 +23,18 @@ Create Category
 
             {{-- end error messages --}}
 
-            <form method="post" action="{{route('admin.category.store')}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('admin.category.update', $category_info->id)}}" enctype="multipart/form-data">
+            {{-- <form method="post" action="" enctype="multipart/form-data"> --}}
+
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
                         <label for="category_name">Enter Category Name</label>
-                        <input type="text" class="form-control" id="category_name" name="category_name" placeholder="Electronics">
+                        <input type="text" class="form-control" id="category_name" name="category_name" value="{{  $category_info->category_name  }}">
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary">Create Category</button>
+                    <button class="btn btn-primary">Update Category</button>
                 </div>
             </form>
         </div>

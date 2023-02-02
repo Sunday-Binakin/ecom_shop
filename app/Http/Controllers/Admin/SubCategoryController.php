@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\SubCategory;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreSubCategoryRequest;
 
 class SubCategoryController extends Controller
 {
@@ -15,7 +20,8 @@ class SubCategoryController extends Controller
     public function index()
     {
         //
-        return view('admin.sub-category.index');
+        $sub_categories = SubCategory::latest()->get();
+        return view('admin.sub-category.index', compact('sub_categories'));
     }
 
     /**
@@ -35,9 +41,23 @@ class SubCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreSubCategoryRequest $request)
     {
         //
+        $request->validated();
+
+//calling the category name from the category table
+        $category_name = Category::where('id', $request->category_id)->value('category_name');
+
+        SubCategory::insert([
+            'sub_category_name' => $request->sub_category_name,
+            'slug' => Str::slug($request->sub_category_name),
+            'product_count' => 0,
+            'category_id' => $request->category_id,
+            'category_name' => $category_name,
+            'created_at' => Carbon::now(),
+        ]);
+        return redirect()->route('admin.sub.category.index')->with('success', 'SubCategory Added Successfully');
     }
 
     /**

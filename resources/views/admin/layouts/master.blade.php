@@ -15,6 +15,10 @@
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/custom.css') }}">
     <link rel='shortcut icon' type='image/x-icon' href='{{ asset('admin/assets/img/favicon.ico') }}' />
+    {{-- datable cdn --}}
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    
 </head>
 
 <body>
