@@ -8,3 +8,10 @@
 <script src="{{ asset('admin/assets/js/scripts.js') }}"></script>
 <!-- Custom JS File -->
 <script src="{{ asset('admin/assets/js/custom.js') }}"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready( function () {
+    $('#sub_category_table').DataTable();
+} );
+</script>
