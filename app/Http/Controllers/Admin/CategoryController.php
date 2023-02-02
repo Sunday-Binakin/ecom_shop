@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreCategoryRequest;
 use Illuminate\Support\Str;
 
 class CategoryController extends Controller
@@ -46,7 +46,7 @@ class CategoryController extends Controller
         $request->validated();
         Category::insert([
             'category_name' => $request->category_name,
-            'slug'=>Str::slug($request->category_name),
+            'slug' => Str::slug($request->category_name),
             // 'slug'=>strtolower(str_replace('','-',$request->category_name)),
             'created_at' => Carbon::now(),
         ]);
@@ -90,7 +90,7 @@ class CategoryController extends Controller
         $request->validated();
         Category::findOrFail($id)->update([
             'category_name' => $request->category_name,
-            'slug'=>Str::slug($request->category_name),
+            'slug' => Str::slug($request->category_name),
             // 'slug'=>strtolower(str_replace('','-',$request->category_name)),
             'updated_at' => Carbon::now(),
         ]);
@@ -108,5 +108,23 @@ class CategoryController extends Controller
         //
         Category::findOrFail($id)->delete();
         return redirect()->route('admin.category.index')->with('message', 'Category Deleted Successfully');
+    }
+
+    public function deactivate($id)
+    {
+        Category::findOrFail($id)->update([
+            'status' => 'inactive',
+            'updated_at' => Carbon::now(),
+        ]);
+        return redirect()->route('admin.category.index')->with('message', 'Category Deactivated Successfully');
+    }
+    public function activate(Request $request,$id)
+    {
+        // request was no needed here
+        Category::findOrFail($id)->update([
+            'status' => 'active',
+            'updated_at' => Carbon::now(),
+        ]);
+        return redirect()->route('admin.category.index')->with('message', 'Category Activated Successfully');
     }
 }
