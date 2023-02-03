@@ -45,9 +45,25 @@ All Sub category
                         </td>
                         <td>
                             <div>
-                                <a href="" class="btn btn-info">Edit</a>
+                                <a href="{{ route('admin.sub.category.edit') }}" class="btn btn-info">Edit</a>
 
                                 <a href="" class="btn btn-danger">Delete</a>
+                                @if($sub_category->status == 'active')
+                                {{-- <a href="{{ route('admin.category.deactivate',$category->id )}}" class="btn btn-warning">Deactivate</a> --}}
+                                <form action="" method="POST">
+                                    @csrf
+                                    {{-- <input type="hidden" name="id" value="{{ $category->id }}"> --}}
+                                    <input type="submit" value="Deactivate" class="btn btn-warning mt-2">
+                                </form>
+                                @else
+                                {{-- <a href="{{ route('admin.category.activate',$category->id )}}" class="btn btn-success">Activate</a> --}}
+                                <form action="" method="POST">
+                                    @csrf
+                                    {{-- <input type="hidden" name="id" value="{{ $category->id }}"> --}}
+                                    <input type="submit" value="Activate" class="btn btn-success mt-2">
+
+                                    @endif
+                                </form>
                             </div>
                         </td>
                 </tr>

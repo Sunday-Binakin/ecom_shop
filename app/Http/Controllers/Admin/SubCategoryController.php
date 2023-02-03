@@ -80,6 +80,8 @@ class SubCategoryController extends Controller
     public function edit($id)
     {
         //
+        $sub_category_info = SubCategory::findOrFail($id);
+        return view('admin.sub-category.edit', compact('sub_category_info'));
     }
 
     /**
@@ -104,4 +106,6 @@ class SubCategoryController extends Controller
     {
         //
     }
+
+
 }
