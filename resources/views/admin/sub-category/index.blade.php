@@ -45,7 +45,7 @@ All Sub category
                         </td>
                         <td>
                             <div>
-                                <a href="{{ route('admin.sub.category.edit') }}" class="btn btn-info">Edit</a>
+                                <a href="{{ route('admin.sub.category.edit', $sub_category->id) }}" class="btn btn-info">Edit</a>
 
                                 <a href="" class="btn btn-danger">Delete</a>
                                 @if($sub_category->status == 'active')
