@@ -17,7 +17,7 @@ All Sub category
 
 <div class="card-body">
     <div class="table-responsive">
-        <table id="sub_category_table" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+        <table id="data_table" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
             <thead>
                 <tr>
                     <th>#</th>
@@ -47,17 +47,17 @@ All Sub category
                             <div>
                                 <a href="{{ route('admin.sub.category.edit', $sub_category->id) }}" class="btn btn-info">Edit</a>
 
-                                <a href="" class="btn btn-danger">Delete</a>
+                                <a href="{{   route('admin.sub.category.delete',$sub_category->id) }}" class="btn btn-danger">Delete</a>
                                 @if($sub_category->status == 'active')
                                 {{-- <a href="{{ route('admin.category.deactivate',$category->id )}}" class="btn btn-warning">Deactivate</a> --}}
-                                <form action="" method="POST">
+                                <form action="{{ route('admin.sub.category.deactivate',$sub_category->id) }}" method="POST">
                                     @csrf
                                     {{-- <input type="hidden" name="id" value="{{ $category->id }}"> --}}
                                     <input type="submit" value="Deactivate" class="btn btn-warning mt-2">
                                 </form>
                                 @else
                                 {{-- <a href="{{ route('admin.category.activate',$category->id )}}" class="btn btn-success">Activate</a> --}}
-                                <form action="" method="POST">
+                                <form action="{{ route('admin.sub.category.activate',$sub_category->id) }}" method="POST">
                                     @csrf
                                     {{-- <input type="hidden" name="id" value="{{ $category->id }}"> --}}
                                     <input type="submit" value="Activate" class="btn btn-success mt-2">

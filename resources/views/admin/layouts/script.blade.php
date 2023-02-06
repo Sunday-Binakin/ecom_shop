@@ -12,6 +12,10 @@
 
 <script type="text/javascript">
 $(document).ready( function () {
-    $('#sub_category_table').DataTable();
+    $('#data_table').DataTable();
 } );
+// <script type="text/javascript">
+// $(document).ready( function () {
+//     $('#brands_table').DataTable();
+// } );
 </script>

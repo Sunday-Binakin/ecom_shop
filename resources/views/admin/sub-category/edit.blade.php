@@ -10,7 +10,7 @@ Create Sub Category
             <div class="card-header">
                 <h4>Create Sub Category</h4>
             </div>
-            <form action="{{   route('admin.sub.category.update') }}" method="POST">
+            <form action="{{   route('admin.sub.category.update',$sub_category_info->id) }}" method="POST">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
@@ -33,8 +33,8 @@ Create Sub Category
                             <option value="{{ $category->id }}"
                                @if($category->id == $sub_category_info->category_id)
                                  selected
-                                
-                               @endif 
+
+                               @endif
                                 >{{ $category->category_name }}</option>
                             {{-- <option value="1">Electronics</option> --}}
                             @endforeach
@@ -43,7 +43,7 @@ Create Sub Category
                 </div>
                 <div class="card-footer">
                     {{-- <button class="btn btn-primary">Create sub Category</button> --}}
-                    <input type="submit" value="Create Subcategory" class="btn btn-primary">
+                    <input type="submit" value="Update SubCategory" class="btn btn-primary">
                 </div>
             </form>
         </div>

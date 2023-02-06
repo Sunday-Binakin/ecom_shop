@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use Carbon\Carbon;
+use App\Models\Brand;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreBrandsRequest;
 
 class BrandsController extends Controller
 {
@@ -15,7 +19,8 @@ class BrandsController extends Controller
     public function index()
     {
         //
-        return view('admin.brands.index');
+        $brand_info = Brand::latest()->get();
+        return view('admin.brands.index', compact('brand_info'));
     }
 
     /**
@@ -35,9 +40,17 @@ class BrandsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBrandsRequest $request)
     {
         //
+        $request->validated();
+        Brand::insert([
+            'brand_name' => $request->brand_name,
+            'slug' =>Str::slug($request->slug),
+            'created_at' => Carbon::now(),
+        ]);
+        return redirect()->route('admin.brands.index')->with('success', 'Brand Created Successfully');
+
     }
 
     /**
@@ -60,6 +73,8 @@ class BrandsController extends Controller
     public function edit($id)
     {
         //
+        $brand_info = Brand::findOrFail($id);
+        return view('admin.brands.edit', compact('brand_info'));
     }
 
     /**
@@ -72,6 +87,12 @@ class BrandsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        Brand::findOrFail($id)->update([
+            'brand_name' => $request->brand_name,
+            'slug' =>Str::slug($request->slug),
+            'updated_at' => Carbon::now(),
+        ]);
+        return redirect()->route('admin.brands.index')->with('success', 'Brand Updated Successfully');
     }
 
     /**
@@ -83,5 +104,28 @@ class BrandsController extends Controller
     public function destroy($id)
     {
         //
+        Brand::findOrFail($id)->delete();
+        return redirect()->route('admin.brands.index')->with('success', 'Brand Deleted Successfully');
+    }
+
+    public function activate($id)
+    {
+        //
+        Brand::findOrFail($id)->update([
+            'status' => 'active',
+            'updated_at' => Carbon::now(),
+
+        ]);
+        return redirect()->route('admin.brands.index')->with('success', 'Brand Activated Successfully');
+    }
+
+    public function deactivate($id)
+    {
+        //
+        Brand::findOrFail($id)->update([
+            'status' => 'inactive',
+            'updated_at' => Carbon::now(),
+        ]);
+        return redirect()->route('admin.brands.index')->with('success', 'Brand Deactivated Successfully');
     }
 }

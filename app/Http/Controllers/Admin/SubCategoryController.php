@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Category;
-use App\Models\SubCategory;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSubCategoryRequest;
+use App\Models\Category;
+use App\Models\SubCategory;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 
 class SubCategoryController extends Controller
 {
@@ -91,9 +91,16 @@ class SubCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreSubCategoryRequest $request, $id)
     {
         //
+        $request->validated();
+        SubCategory::findorfail($id)->update([
+            'sub_category_name' => $request->sub_category_name,
+            'slug' => Str::slug($request->sub_category_name),
+        ]);
+        return redirect()->route('admin.sub.category.index')->with('success', 'SubCategory Updated');
+
     }
 
     /**
@@ -105,7 +112,25 @@ class SubCategoryController extends Controller
     public function destroy($id)
     {
         //
+        SubCategory::Findorfail($id)->delete();
+        return redirect()->route('admin.sub.category.index')->with('success', 'Deleted');
     }
 
-
+    public function activate($id)
+    {
+        SubCategory::findorfail($id)->update([
+            'status' => 'active',
+            'updated_at' => Carbon::now(),
+        ]);
+        return redirect()->route('admin.sub.category.index')->with('success', 'SubCategory Activated');
+    }
+    public function deactivate($id)
+    {
+        SubCategory::findorfail($id)->update([
+            'status' => 'inactive',
+            'updated_at' => Carbon::now(),
+        ]);
+        return redirect()->route('admin.sub.category.index')->with('success', 'SubCategory Deactivated');
+    }
 }
+ 
