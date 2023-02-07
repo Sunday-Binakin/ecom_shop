@@ -48,7 +48,7 @@ All Brands
                                 <a href="{{ route('admin.brands.edit', $brand->id) }}" class="btn btn-info">Edit</a>
 
                                 <a href="{{   route('admin.brands.delete',$brand->id) }}" class="btn btn-danger">Delete</a>
-                                @if($sub_category->status == 'active')
+                                @if($brand->status == 'active')
 
                                 <form action="{{ route('admin.brands.deactivate',$brand->id) }}" method="POST">
                                     @csrf

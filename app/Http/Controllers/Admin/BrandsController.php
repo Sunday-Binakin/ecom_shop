@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Carbon\Carbon;
-use App\Models\Brand;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBrandsRequest;
+use App\Models\Brand;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class BrandsController extends Controller
 {
@@ -19,8 +19,8 @@ class BrandsController extends Controller
     public function index()
     {
         //
-        $brand_info = Brand::latest()->get();
-        return view('admin.brands.index', compact('brand_info'));
+        $brands_info = Brand::latest()->get();
+        return view('admin.brands.index', compact('brands_info'));
     }
 
     /**
@@ -46,7 +46,7 @@ class BrandsController extends Controller
         $request->validated();
         Brand::insert([
             'brand_name' => $request->brand_name,
-            'slug' =>Str::slug($request->slug),
+            'slug' => Str::slug($request->brand_name),
             'created_at' => Carbon::now(),
         ]);
         return redirect()->route('admin.brands.index')->with('success', 'Brand Created Successfully');
@@ -73,8 +73,8 @@ class BrandsController extends Controller
     public function edit($id)
     {
         //
-        $brand_info = Brand::findOrFail($id);
-        return view('admin.brands.edit', compact('brand_info'));
+        $brands_info = Brand::findOrFail($id);
+        return view('admin.brands.edit', compact('brands_info'));
     }
 
     /**
@@ -89,7 +89,7 @@ class BrandsController extends Controller
         //
         Brand::findOrFail($id)->update([
             'brand_name' => $request->brand_name,
-            'slug' =>Str::slug($request->slug),
+            'slug' => Str::slug($request->slug),
             'updated_at' => Carbon::now(),
         ]);
         return redirect()->route('admin.brands.index')->with('success', 'Brand Updated Successfully');

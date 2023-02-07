@@ -10,11 +10,13 @@
             <div class="card-header">
                 <h4>Create Brand</h4>
             </div>
-            <form action="" method="POST">
+            <form action="{{ route('admin.brands.store') }}" method="POST">
+                @csrf
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="category_name">Enter Brand Name</label>
-                        <input type="text" class="form-control" id="category_name" name="category_name" placeholder="Electronics">
+                        <label for="brand_name">Enter Brand Name</label>
+                        <input type="text" class="form-control" id="brand_name"
+                         name="brand_name" placeholder="Electronics">
                     </div>
                 </div>
                 <div class="card-footer">
